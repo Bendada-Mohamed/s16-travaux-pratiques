@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Séance 16 – Travaux Pratiques : Concevoir une application avec Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##  Description
+Cette Application est un **exemple pratique d'application React intégrant Redux** pour gérer une liste d'articles.  
+L'application permet :
 
-## Available Scripts
+- L'affichage d'une liste d'articles existants
+- L'ajout de nouveaux articles via un formulaire
+- La gestion centralisée du state avec Redux
 
-In the project directory, you can run:
+Ce TP permet de comprendre **l'architecture Redux** et son intégration dans React.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##  Objectifs pédagogiques
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Comprendre les concepts clés de Redux : **state, actions, reducer, store**
+- Apprendre à connecter Redux à une application React avec `react-redux`
+- Appliquer les concepts pour gérer un **state global** au lieu d'utiliser seulement `useState`
+- Organiser un projet React de manière professionnelle
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##  Architecture du projet
+src/
+│
+├── components/
+│ ├── AddArticle.js # Formulaire pour ajouter un nouvel article
+│ └── Article.js # Affichage d'un article
+│
+├── containers/
+│ └── Articles.js # Container connecté à Redux
+│
+├── store/
+│ ├── actionCreators.js # Fonctions pour créer les actions
+│ ├── actionTypes.js # Définition des types d'actions
+│ └── reducer.js # Reducer pour gérer le state
+│
+├── App.js # Composant principal
+└── index.js # Point d'entrée de l'application
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##  Fonctionnement du projet
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Redux : état global
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Store** : contient l'état global `articles`
+- **Reducer** : met à jour le state en fonction des actions
+- **Actions** : objets décrivant les modifications à appliquer au state
+- **Connect** : permet à un composant React d'accéder au state et de dispatcher des actions
 
-### `npm run eject`
+### 2. Ajouter un article
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- L'utilisateur remplit le formulaire `AddArticle`
+- Le formulaire déclenche `saveArticle(article)` (dispatch vers Redux)
+- Le reducer ajoute le nouvel article à la liste
+- La liste affichée par `Articles` se met automatiquement à jour
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##  Installation et Lancement
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Redux : état global
 
-## Learn More
+git clone https://github.com/Bendada-Mohamed/s16-travaux-pratiques.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Installer les dependances
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+cd s16-travaux-pratiques
+npm install
 
-### Code Splitting
+### 2. Lancer L'application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm start
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##  Conclusion
 
-### Making a Progressive Web App
+Ce TP permet de :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
++ Maîtriser les bases de Redux dans une application React
++ Séparer la logique métier (state) de la présentation (composants)
++ Créer un projet structuré et maintenable pour de futurs projets plus complexes
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##  Mohamed Bendada - Junior Web developper - bendada.mohamed@outlook.com
