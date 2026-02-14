@@ -23,6 +23,7 @@ Ce TP permet de comprendre **l'architecture Redux** et son intégration dans Rea
 
 ##  Architecture du projet
 
+```text
 src/
 ├── components/
 │   ├── AddArticle.js       # Formulaire pour ajouter un nouvel article
@@ -35,7 +36,7 @@ src/
 │   └── reducer.js          # Reducer pour gérer le state
 ├── App.js                  # Composant principal
 └── index.js                # Point d'entrée de l'application
-
+```
 ---
 
 ##  Fonctionnement du projet
