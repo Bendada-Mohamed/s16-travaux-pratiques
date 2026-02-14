@@ -22,22 +22,20 @@ Ce TP permet de comprendre **l'architecture Redux** et son intégration dans Rea
 ---
 
 ##  Architecture du projet
+
+```text
 src/
-│
 ├── components/
-│ ├── AddArticle.js # Formulaire pour ajouter un nouvel article
-│ └── Article.js # Affichage d'un article
-│
+│   ├── AddArticle.js       # Formulaire pour ajouter un nouvel article
+│   └── Article.js          # Affichage d'un article
 ├── containers/
-│ └── Articles.js # Container connecté à Redux
-│
+│   └── Articles.js         # Container connecté à Redux
 ├── store/
-│ ├── actionCreators.js # Fonctions pour créer les actions
-│ ├── actionTypes.js # Définition des types d'actions
-│ └── reducer.js # Reducer pour gérer le state
-│
-├── App.js # Composant principal
-└── index.js # Point d'entrée de l'application
+│   ├── actionCreators.js   # Fonctions pour créer les actions
+│   ├── actionTypes.js      # Définition des types d'actions
+│   └── reducer.js          # Reducer pour gérer le state
+├── App.js                  # Composant principal
+└── index.js                # Point d'entrée de l'application
 
 ---
 
